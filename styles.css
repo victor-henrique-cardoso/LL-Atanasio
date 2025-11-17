@@ -50,13 +50,14 @@ body {
   margin: 24px auto;
   padding: 0 16px;
 }
-
 .controls {
   display: flex;
+  flex-direction: column; /* coloca um em baixo do outro */
   gap: 12px;
-  align-items: center;
   margin-bottom: 16px;
+  width: 100%;
 }
+
 
 .categories {
   display: flex;
@@ -280,6 +281,28 @@ body {
   transform: scale(1.1);
   color: red;
 }
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-wrapper .search {
+  width: 100%;
+  padding-right: 30px; /* espaço para o ícone */
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  pointer-events: none; /* não interfere no clique */
+}
+
 
 
 /* MOBILE: categorias em dropdown */

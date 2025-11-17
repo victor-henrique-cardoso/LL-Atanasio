@@ -15,14 +15,22 @@
     </header>
 
     <main class="container">
-      <section class="controls">
-       <div class="categories-wrapper">
-  <button id="cat-toggle" class="cat-toggle">Categorias</button>
-  <div id="categories" class="categories"></div>
-</div>
+    <section class="controls">
 
-        <input id="search" class="search" placeholder="Pesquisar produto..." />
-      </section>
+  <!-- Barra de pesquisa primeiro -->
+  <div class="search-wrapper">
+    <input id="search" class="search" placeholder="Pesquisar produto..." />
+    <img src="https://cdn-icons-png.flaticon.com/512/149/149852.png" class="search-icon" />
+  </div>
+
+  <!-- Categorias DEPOIS -->
+  <div class="categories-wrapper">
+    <button id="cat-toggle" class="cat-toggle">Categorias</button>
+    <div id="categories" class="categories"></div>
+  </div>
+
+</section>
+
 
       <section id="products" class="products-grid"></section>
     </main>

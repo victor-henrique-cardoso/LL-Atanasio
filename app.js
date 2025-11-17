@@ -105,7 +105,7 @@ function renderProducts(category=null, search=''){
   list.forEach(p=>{
     const card = document.createElement('div'); card.className='card';
     card.innerHTML = `
-      <img src="${p.image}" alt="${p.name}" />
+      <img src="${p.image}"  />
       <div class="card-body">
         <h3 class="card-title">${p.name}</h3>
         <div class="card-desc">${p.desc}</div>

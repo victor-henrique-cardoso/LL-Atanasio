@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loja Emagrecer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">LL Atanasio</div>
+      <div class="actions">
+        <button id="open-cart" class="cart-btn">Carrinho (<span id="cart-count">0</span>)</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="controls">
+        <div id="categories" class="categories"></div>
+        <input id="search" class="search" placeholder="Pesquisar produto..." />
+      </section>
+
+      <section id="products" class="products-grid"></section>
+    </main>
+
+    <!-- Carrinho modal -->
+    <div id="cart-modal" class="cart-modal hidden">
+      <div class="cart-panel">
+        <button id="close-cart" class="close-btn">Fechar</button>
+        <h2>Seu Carrinho</h2>
+
+        <label for="customer-name" class="label">Nome do cliente</label>
+        <input id="customer-name" class="input" placeholder="Digite seu nome" />
+
+        <label class="label">Forma de pagamento</label>
+        <div class="payment-methods">
+          <label><input type="radio" name="payment" value="Pix" checked /> Pix</label>
+          <label><input type="radio" name="payment" value="Débito" /> Débito</label>
+          <label><input type="radio" name="payment" value="Crédito" /> Crédito</label>
+        </div>
+
+        <ul id="cart-items" class="cart-items"></ul>
+        <div class="cart-footer">
+          <div class="total">Total: R$ <span id="cart-total">0.00</span></div>
+          <button id="checkout-wpp" class="checkout-btn">Finalizar pedido (WhatsApp)</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

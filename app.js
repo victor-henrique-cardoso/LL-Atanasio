@@ -2,12 +2,57 @@
 const vendorPhone = '556984799039';
 
 const products = [
-  {id:1, name:'SlimFit Caps', price:129.90, category:'Suplementos', desc:'Cápsulas naturais para controle de apetite.', image:'https://via.placeholder.com/600x400?text=SlimFit+Caps'},
-  {id:2, name:'Chá Detox', price:49.90, category:'Chás', desc:'Blend natural para desintoxicar e acelerar metabolismo.', image:'https://via.placeholder.com/600x400?text=Chá+Detox'},
-  {id:3, name:'Belt Slim', price:79.90, category:'Acessórios', desc:'Cinta modeladora para uso durante exercícios.', image:'https://via.placeholder.com/600x400?text=Belt+Slim'},
-  {id:4, name:'Shake Proteico', price:99.90, category:'Suplementos', desc:'Shake com proteínas e fibras para saciedade.', image:'https://via.placeholder.com/600x400?text=Shake+Proteico'},
-  {id:5, name:'Chá Emagrecedor', price:39.90, category:'Chás', desc:'Chá termogênico com sabor agradável.', image:'https://via.placeholder.com/600x400?text=Chá+Emagrecedor'},
-  {id:6, name:'Tapete Yoga', price:59.90, category:'Acessórios', desc:'Tapete antiderrapante para treino em casa.', image:'/imagems/ISQ-0027-198_zoom4.webp'}
+  {id:1,
+  name:'SlimFit Caps',
+  price:129.90,
+  category:'Suplementos',
+  desc:'Cápsulas naturais para controle de apetite.', 
+  image:'https://via.placeholder.com/600x400?text=SlimFit+Caps'
+  },
+
+  {
+  id:2, 
+  name:'Chá Detox', 
+  price:49.90, 
+  category:'Chás', 
+  desc:'Blend natural para desintoxicar e acelerar metabolismo.', image:'https://via.placeholder.com/600x400?text=Chá+Detox'
+  },
+
+  {
+    id:3, 
+    name:'Belt Slim', 
+    price:79.90, 
+    category:'Acessórios', 
+    desc:'Cinta modeladora para uso durante exercícios.', image:'https://via.placeholder.com/600x400?text=Belt+Slim'
+  },
+
+  {
+    id:4, 
+    name:'Shake Proteico', 
+    price:99.90, 
+    category:'Suplementos', 
+    desc:'Shake com proteínas e fibras para saciedade.', image:'https://via.placeholder.com/600x400?text=Shake+Proteico'
+  },
+
+  {
+    id:5, 
+    name:'Chá Emagrecedor', 
+    price:39.90, 
+    category:'Chás', 
+    desc:'Chá termogênico com sabor agradável.', 
+    image:'https://via.placeholder.com/600x400?text=Chá+Emagrecedor'
+  },
+
+  {
+    id:6, 
+    name:'Tapete Yoga', 
+    price:59.90, 
+    category:'Acessórios', 
+    desc:'Tapete antiderrapante para treino em casa.', 
+    image:'/imagems/ISQ-0027-198_zoom4.webp'
+  },
+
+  
 ];
 
 // Estado do carrinho: array de {id, qty}
@@ -21,20 +66,36 @@ const formatPrice = v => v.toFixed(2).replace('.', ',');
 // Render
 function renderCategories(){
   const el = $('#categories');
-  const cats = ['Todos', ...Array.from(new Set(products.map(p=>p.category)))]
+  const cats = ['Todos', ...Array.from(new Set(products.map(p=>p.category)))];
   el.innerHTML = '';
+
   cats.forEach(cat => {
     const btn = document.createElement('button');
     btn.textContent = cat;
-    btn.onclick = ()=>{
-      $$('#categories button').forEach(b=>b.classList.remove('active'));
+
+    btn.onclick = () => {
+      // ativar botão
+      $$('#categories button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      renderProducts(cat === 'Todos' ? null : cat, $('#search').value.trim())
-    }
-    if(cat === 'Todos') btn.classList.add('active')
-    el.appendChild(btn)
-  })
+
+      // renderizar produtos
+      renderProducts(cat === 'Todos' ? null : cat, $('#search').value.trim());
+
+      // FECHAR DROPDOWN NO MOBILE
+      const catList = document.getElementById('categories');
+      const catToggle = document.getElementById('cat-toggle');
+
+      if (window.innerWidth <= 700) {
+        catList.classList.remove('open');
+        catToggle.textContent = cat;
+      }
+    };
+
+    if(cat === 'Todos') btn.classList.add('active');
+    el.appendChild(btn);
+  });
 }
+
 
 function renderProducts(category=null, search=''){
   const el = $('#products');
@@ -142,9 +203,21 @@ function checkoutWhatsApp(){
 
 // Eventos
 document.addEventListener('DOMContentLoaded', ()=>{
+  // EXISTE JÁ:
   renderCategories();
   renderProducts();
   updateCartUI();
+
+  // >>>> ADICIONAR ISSO <<<<
+  const catToggle = document.getElementById('cat-toggle');
+  const catList = document.getElementById('categories');
+
+  catToggle.onclick = () => {
+    catList.classList.toggle('open');
+    catToggle.textContent = catList.classList.contains('open')
+      ? "Categorias "
+      : "Categorias ";
+  };
 
   $('#open-cart').onclick = ()=>{ $('#cart-modal').classList.remove('hidden') }
   $('#close-cart').onclick = ()=>{ $('#cart-modal').classList.add('hidden') }

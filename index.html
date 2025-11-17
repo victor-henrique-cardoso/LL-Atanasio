@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Loja Emagrecer</title>
+    <title>Loja LL Atanasio</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -16,7 +16,11 @@
 
     <main class="container">
       <section class="controls">
-        <div id="categories" class="categories"></div>
+       <div class="categories-wrapper">
+  <button id="cat-toggle" class="cat-toggle">Categorias</button>
+  <div id="categories" class="categories"></div>
+</div>
+
         <input id="search" class="search" placeholder="Pesquisar produto..." />
       </section>
 
@@ -30,23 +34,26 @@
         <h2>Seu Carrinho</h2>
 
         <label for="customer-name" class="label">Nome do cliente</label>
+        <br>
         <input id="customer-name" class="input" placeholder="Digite seu nome" />
-
+        <br><br>
         <label class="label">Forma de pagamento</label>
         <div class="payment-methods">
           <label><input type="radio" name="payment" value="Pix" checked /> Pix</label>
           <label><input type="radio" name="payment" value="Débito" /> Débito</label>
           <label><input type="radio" name="payment" value="Crédito" /> Crédito</label>
         </div>
-
+          <hr>
         <ul id="cart-items" class="cart-items"></ul>
         <div class="cart-footer">
           <div class="total">Total: R$ <span id="cart-total">0.00</span></div>
+          <br>
           <button id="checkout-wpp" class="checkout-btn">Finalizar pedido (WhatsApp)</button>
         </div>
       </div>
     </div>
 
     <script src="app.js"></script>
+    <script src="/produtos.js"></script>
   </body>
 </html>

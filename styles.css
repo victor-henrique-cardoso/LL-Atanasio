@@ -259,9 +259,31 @@ body {
   color: #000000;
 }
 
-/* ------------------------- */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  padding: 4px;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  color: red;
+}
+
+
 /* MOBILE: categorias em dropdown */
-/* ------------------------- */
+
 @media (max-width: 700px) {
 
   .categories-wrapper {

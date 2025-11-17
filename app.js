@@ -7,7 +7,7 @@ const products = [
   price:129.90,
   category:'Suplementos',
   desc:'Cápsulas naturais para controle de apetite.', 
-  image:'https://via.placeholder.com/600x400?text=SlimFit+Caps'
+  image:'/imagems/images.png'
   },
 
   {
@@ -15,7 +15,7 @@ const products = [
   name:'Chá Detox', 
   price:49.90, 
   category:'Chás', 
-  desc:'Blend natural para desintoxicar e acelerar metabolismo.', image:'https://via.placeholder.com/600x400?text=Chá+Detox'
+  desc:'Blend natural para desintoxicar e acelerar metabolismo.', image:'/imagems/images.png'
   },
 
   {
@@ -23,7 +23,7 @@ const products = [
     name:'Belt Slim', 
     price:79.90, 
     category:'Acessórios', 
-    desc:'Cinta modeladora para uso durante exercícios.', image:'https://via.placeholder.com/600x400?text=Belt+Slim'
+    desc:'Cinta modeladora para uso durante exercícios.',image:'/imagems/images.png'
   },
 
   {
@@ -31,7 +31,7 @@ const products = [
     name:'Shake Proteico', 
     price:99.90, 
     category:'Suplementos', 
-    desc:'Shake com proteínas e fibras para saciedade.', image:'https://via.placeholder.com/600x400?text=Shake+Proteico'
+    desc:'Shake com proteínas e fibras para saciedade.', image:'/imagems/images.png'
   },
 
   {
@@ -40,7 +40,7 @@ const products = [
     price:39.90, 
     category:'Chás', 
     desc:'Chá termogênico com sabor agradável.', 
-    image:'https://via.placeholder.com/600x400?text=Chá+Emagrecedor'
+    image:'/imagems/images.png'
   },
 
   {
@@ -49,7 +49,7 @@ const products = [
     price:59.90, 
     category:'Acessórios', 
     desc:'Tapete antiderrapante para treino em casa.', 
-    image:'/imagems/ISQ-0027-198_zoom4.webp'
+    image:'/imagems/images.png'
   },
 
   

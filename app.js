@@ -19,6 +19,7 @@ const $$ = sel => Array.from(document.querySelectorAll(sel));
 const formatPrice = v => v.toFixed(2).replace('.', ',');
 
 // Render
+let selectedCategory = 'Todos';
 function renderCategories(){
   const el = $('#categories');
   const cats = ['Todos', ...Array.from(new Set(products.map(p=>p.category)))]
@@ -27,13 +28,20 @@ function renderCategories(){
     const btn = document.createElement('button');
     btn.textContent = cat;
     btn.onclick = ()=>{
+      selectedCategory = cat;
       $$('#categories button').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
       renderProducts(cat === 'Todos' ? null : cat, $('#search').value.trim())
+      // Atualiza texto do botão de categorias no mobile
+      const catToggle = document.getElementById('categories-toggle');
+      if(catToggle) catToggle.textContent = cat;
     }
-    if(cat === 'Todos') btn.classList.add('active')
+    if(cat === selectedCategory) btn.classList.add('active')
     el.appendChild(btn)
   })
+  // Atualiza texto do botão de categorias no mobile
+  const catToggle = document.getElementById('categories-toggle');
+  if(catToggle) catToggle.textContent = selectedCategory;
 }
 
 function renderProducts(category=null, search=''){
@@ -150,8 +158,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
   $('#close-cart').onclick = ()=>{ $('#cart-modal').classList.add('hidden') }
   $('#checkout-wpp').onclick = checkoutWhatsApp
   $('#search').addEventListener('input', ()=>{
-    const catBtn = document.querySelector('#categories button.active');
-    const cat = catBtn && catBtn.textContent !== 'Todos' ? catBtn.textContent : null;
-    renderProducts(cat, $('#search').value.trim())
+    renderProducts(selectedCategory === 'Todos' ? null : selectedCategory, $('#search').value.trim())
   })
+
+  // Responsivo: menu de categorias
+  const catToggle = document.getElementById('categories-toggle');
+  const catList = document.getElementById('categories');
+  if(catToggle && catList) {
+    catToggle.addEventListener('click', ()=>{
+      catList.classList.toggle('open');
+    });
+    // Fecha menu ao clicar fora
+    document.addEventListener('click', (e)=>{
+      if(window.innerWidth > 700) return;
+      if(!catList.contains(e.target) && e.target !== catToggle) {
+        catList.classList.remove('open');
+      }
+    });
+    // Fecha menu ao escolher categoria
+    catList.addEventListener('click', (e)=>{
+      if(e.target.tagName === 'BUTTON') catList.classList.remove('open');
+    });
+  }
 });

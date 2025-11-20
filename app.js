@@ -1,180 +1,57 @@
-
 const vendorPhone = '556993807246';
 
 const products = [
-  {id:1,
-  name:'Pawer Whey',
-  price:230.00,
-  category:'Suplementos',
-  desc:'Cápsulas naturais para controle de apetite.', 
-  image:'imagems/1be8328c-5345-451f-b39d-a4df70591c3d.png'
-  },
-
-  {
-  id:2, 
-  name:'Power Detox', 
-  price:180.00, 
-  category:'Chás', 
-  desc:'Blend natural para desintoxicar e acelerar metabolismo.', image:'imagems/3835b8b6-046a-4c0e-966e-1237759599a2.png'
-  },
-
-  {
-    id:3, 
-    name:'Power Silver', 
-    price:280.00, 
-    category:'Acessórios', 
-    desc:'Cinta modeladora para uso durante exercícios.',image:'./imagems/388f6162-2a20-411f-885d-484922cb367c.png'
-  },
-
-  {
-    id:4, 
-    name:'Power Colágeno', 
-    price:150.00, 
-    category:'Suplementos', 
-    desc:'Shake com proteínas e fibras para saciedade.', image:'imagems/50bc4467-1c04-4ae8-96af-b9f1fca4dbc3.png'
-  },
-
-  {
-    id:5, 
-    name:'Power Vitamina', 
-    price:150.00, 
-    category:'Chás', 
-    desc:'Chá termogênico com sabor agradável.', 
-    image:'imagems/6720eca7-4f7d-4ee3-9f13-528069ae725b.png'
-  },
-
-  {
-    id:6, 
-    name:'Power Creatina', 
-    price:150.00, 
-    category:'Acessórios', 
-    desc:'Tapete antiderrapante para treino em casa.', 
-    image:'imagems/6805a1a3-1290-4980-b83e-25d8ca61cfd0.png'
-  },
-
-  {
-    id:7,
-    name:'Power Golden',
-    price:260.00,
-    category:'Suplementos',
-    desc:'Termogênico avançado para queima de gordura.',
-    image:'imagems/6d64c61b-6212-4e8c-8212-cb2948f80cbd.png'
-  },
-  {
-    id:8,
-    name:'Power Creatina Goma',
-    price:59.90,
-    category:'Chás',
-    desc:'Chá verde de alta qualidade para acelerar o metabolismo.',
-    image:'imagems/9b41c8e8-0a4e-48b9-b00d-2e0312aa40a7.png'
-  },
-  {
-    id:9,
-    name:'Power Pump',
-    price:150.00,
-    category:'Acessórios',
-    desc:'Rolo para liberação miofascial e alívio muscular.',
-    image:'imagems/d656bede-5f7d-4bd3-8c6b-8ab0345eaa7e.png'
-  },
-  {
-    id:10,
-    name:'Power Coffee',
-    price:180.00,
-    category:'Suplementos',
-    desc:'Proteína isolada para recuperação muscular rápida.',
-    image:'imagems/power coffee.png'
-  },
-  {
-    id:11,
-    name:'Power Reedy',
-    price:300.00,
-    category:'Chás',
-    desc:'Chá de hibisco 100% natural para auxiliar na perda de peso.',
-    image:'imagems/Power reedy.png'
-  },
-  {
-    id:12,
-    name:'Power Omega 3',
-    price:120.00,
-    category:'Acessórios',
-    desc:'Corda de pular ajustável para exercícios cardiovasculares.',
-    image:'imagems/omega 3.png'
-  },
-  {
-    id:13,
-    name:'Power Diamond',
-    price:290.00,
-    category:'Suplementos',
-    desc:'Aminoácidos essenciais para recuperação muscular.',
-    image:'imagems/power diamante.png'
-  }
+  {id:1, name:'Power Whey', price:230.00, category:'Suplementos', image:'imagems/1be8328c-5345-451f-b39d-a4df70591c3d.png'},
+  {id:2, name:'Power Detox', price:180.00, category:'Chás', desc:'Blend natural para desintoxicar e acelerar metabolismo.', image:'imagems/3835b8b6-046a-4c0e-966e-1237759599a2.png'},
+  {id:3, name:'Power Silver', price:280.00, category:'Acessórios', desc:'Cinta modeladora para uso durante exercícios.', image:'./imagems/388f6162-2a20-411f-885d-484922cb367c.png'},
+  {id:4, name:'Power Colágeno', price:150.00, category:'Suplementos', desc:'Shake com proteínas e fibras para saciedade.', image:'imagems/50bc4467-1c04-4ae8-96af-b9f1fca4dbc3.png'},
+  {id:5, name:'Power Vitamina', price:150.00, category:'Chás', desc:'Chá termogênico com sabor agradável.', image:'imagems/6720eca7-4f7d-4ee3-9f13-528069ae725b.png'},
+  {id:6, name:'Power Creatina', price:150.00, category:'Acessórios', desc:'Tapete antiderrapante para treino em casa.', image:'imagems/6805a1a3-1290-4980-b83e-25d8ca61cfd0.png'},
+  {id:7, name:'Power Golden', price:260.00, category:'Suplementos', desc:'Termogênico avançado para queima de gordura.', image:'imagems/6d64c61b-6212-4e8c-8212-cb2948f80cbd.png'},
+  {id:8, name:'Power Creatina Goma', price:59.90, category:'Chás', desc:'Chá verde de alta qualidade para acelerar o metabolismo.', image:'imagems/9b41c8e8-0a4e-48b9-b00d-2e0312aa40a7.png'},
+  {id:9, name:'Power Pump', price:150.00, category:'Acessórios', desc:'Rolo para liberação miofascial e alívio muscular.', image:'imagems/d656bede-5f7d-4bd3-8c6b-8ab0345eaa7e.png'},
+  {id:10, name:'Power Coffee', price:180.00, category:'Suplementos', desc:'Proteína isolada para recuperação muscular rápida.', image:'imagems/power coffee.png'},
+  {id:11, name:'Power Reedy', price:300.00, category:'Chás', desc:'Chá de hibisco 100% natural para auxiliar na perda de peso.', image:'imagems/Power reedy.png'},
+  {id:12, name:'Power Omega 3', price:120.00, category:'Acessórios', desc:'Corda de pular ajustável para exercícios cardiovasculares.', image:'imagems/omega 3.png'},
+  {id:13, name:'Power Diamond', price:290.00, category:'Suplementos', desc:'Aminoácidos essenciais para recuperação muscular.', image:'imagems/power diamante.png'}
 ];
 
-// Estado do carrinho: array de {id, qty}
 let cart = JSON.parse(localStorage.getItem('cart_v1')) || [];
 
-// Helpers
 const $ = sel => document.querySelector(sel);
 const $$ = sel => Array.from(document.querySelectorAll(sel));
 const formatPrice = v => v.toFixed(2).replace('.', ',');
 
-// Render
-function renderCategories(){
-  const el = $('#categories');
-  const cats = ['Todos', ...Array.from(new Set(products.map(p=>p.category)))];
-  el.innerHTML = '';
-
-  cats.forEach(cat => {
-    const btn = document.createElement('button');
-    btn.textContent = cat;
-
-    btn.onclick = () => {
-      // ativar botão
-      $$('#categories button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // renderizar produtos
-      renderProducts(cat === 'Todos' ? null : cat, $('#search').value.trim());
-
-      // FECHAR DROPDOWN NO MOBILE
-      const catList = document.getElementById('categories');
-      const catToggle = document.getElementById('cat-toggle');
-
-      if (window.innerWidth <= 700) {
-        catList.classList.remove('open');
-        catToggle.textContent = cat;
-      }
-    };
-https://www.origamid.com/curso/
-    if(cat === 'Todos') btn.classList.add('active');
-    el.appendChild(btn);
-  });
-}
-
-
-function renderProducts(category=null, search=''){
+// --- SEM CATEGORIAS - SOMENTE RENDERIZAÇÃO E BUSCA ---
+function renderProducts(search='') {
   const el = $('#products');
   const s = search.toLowerCase();
-  let list = products.filter(p => (category ? p.category === category : true) && (p.name.toLowerCase().includes(s) || p.desc.toLowerCase().includes(s)));
+
+  let list = products.filter(p => 
+    p.name.toLowerCase().includes(s) || 
+    (p.desc && p.desc.toLowerCase().includes(s))
+  );
+
   el.innerHTML = '';
-  list.forEach(p=>{
-    const card = document.createElement('div'); card.className='card';
+  list.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
     card.innerHTML = `
-      <img src="${p.image}"  />
+      <img src="${p.image}" />
       <div class="card-body">
         <h3 class="card-title">${p.name}</h3>
-        <div class="card-desc">${p.desc}</div>
         <div class="card-footer">
           <div class="price">R$ ${formatPrice(p.price)}</div>
           <button class="btn add-btn">Adicionar</button>
         </div>
-      </div>`;
-    card.querySelector('.add-btn').onclick = ()=>{ addToCart(p.id) };
-    el.appendChild(card)
-  })
+      </div>
+    `;
+    card.querySelector('.add-btn').onclick = ()=> addToCart(p.id);
+    el.appendChild(card);
+  });
 }
 
-function saveCart(){
+function saveCart() {
   localStorage.setItem('cart_v1', JSON.stringify(cart));
 }
 
@@ -205,16 +82,23 @@ function updateCartUI(){
   const countEl = $('#cart-count');
   const itemsEl = $('#cart-items');
   const totalEl = $('#cart-total');
+
   const total = cart.reduce((sum,it)=>{
     const p = products.find(pp=>pp.id===it.id);
-    return sum + (p.price * it.qty)
-  },0)
-  countEl.textContent = cart.reduce((s,i)=>s+i.qty,0)
+    return sum + (p.price * it.qty);
+  },0);
+
+  countEl.textContent = cart.reduce((s,i)=>s+i.qty,0);
+
   itemsEl.innerHTML = '';
-  if(cart.length===0){ itemsEl.innerHTML = '<li>Seu carrinho está vazio.</li>' }
+  if(cart.length===0){
+    itemsEl.innerHTML = '<li>Seu carrinho está vazio.</li>';
+  }
+
   cart.forEach(it=>{
     const p = products.find(pp=>pp.id===it.id);
-    const li = document.createElement('li'); li.className='cart-item';
+    const li = document.createElement('li');
+    li.className='cart-item';
     li.innerHTML = `
       <img src="${p.image}" alt="${p.name}" />
       <div class="meta">
@@ -226,60 +110,50 @@ function updateCartUI(){
         <div class="qty">${it.qty}</div>
         <button class="btn secondary inc">+</button>
         <button class="btn secondary rem">Remover</button>
-      </div>`;
+      </div>
+    `;
     li.querySelector('.dec').onclick = ()=> changeQty(it.id, -1);
     li.querySelector('.inc').onclick = ()=> changeQty(it.id, +1);
     li.querySelector('.rem').onclick = ()=> removeFromCart(it.id);
-    itemsEl.appendChild(li)
-  })
-  totalEl.textContent = formatPrice(total)
+    itemsEl.appendChild(li);
+  });
+
+  totalEl.textContent = formatPrice(total);
 }
 
-// Checkout via WhatsApp
 function checkoutWhatsApp(){
-  if(!vendorPhone){ alert('Configure o número do vendedor em app.js (variável vendorPhone).'); return }
-  if(cart.length===0){ alert('Seu carrinho está vazio.'); return }
-  const customerNameEl = document.getElementById('customer-name');
-  const name = customerNameEl ? customerNameEl.value.trim() : '';
-  if(!name){ alert('Por favor, preencha seu nome antes de finalizar.'); customerNameEl && customerNameEl.focus(); return }
+  if(!vendorPhone){ alert('Configure o número do vendedor.'); return; }
+  if(cart.length===0){ alert('Seu carrinho está vazio.'); return; }
+
+  const customerNameEl = $('#customer-name');
+  const name = customerNameEl.value.trim();
+  if(!name){ alert('Digite seu nome.'); customerNameEl.focus(); return; }
+
   const paymentEl = document.querySelector('input[name="payment"]:checked');
   const payment = paymentEl ? paymentEl.value : 'Não informado';
-  let msg = `Olá, meu nome é ${encodeURIComponent(name)}. Gostaria de finalizar a compra:%0A`;
-  msg += `%0AForma de pagamento: ${encodeURIComponent(payment)}%0A%0A`;
+
+  let msg = `Olá, meu nome é ${encodeURIComponent(name)}. Gostaria de finalizar a compra:%0A%0AForma de pagamento: ${encodeURIComponent(payment)}%0A%0A`;
+
   cart.forEach(it=>{
     const p = products.find(pp=>pp.id===it.id);
     msg += `- ${encodeURIComponent(p.name)} x ${it.qty} = R$ ${formatPrice(p.price * it.qty)}%0A`;
-  })
-  const total = cart.reduce((s,it)=> s + products.find(p=>p.id===it.id).price * it.qty, 0)
+  });
+
+  const total = cart.reduce((s,it)=> s + products.find(p=>p.id===it.id).price * it.qty, 0);
   msg += `%0ATotal: R$ ${formatPrice(total)}`;
-  const url = `https://wa.me/${vendorPhone}?text=${msg}`;
-  window.open(url, '_blank');
+
+  window.open(`https://wa.me/${vendorPhone}?text=${msg}`, '_blank');
 }
 
-// Eventos
 document.addEventListener('DOMContentLoaded', ()=>{
-  // EXISTE JÁ:
-  renderCategories();
   renderProducts();
   updateCartUI();
 
-  // >>>> ADICIONAR ISSO <<<<
-  const catToggle = document.getElementById('cat-toggle');
-  const catList = document.getElementById('categories');
+  $('#open-cart').onclick = ()=> $('#cart-modal').classList.remove('hidden');
+  $('#close-cart').onclick = ()=> $('#cart-modal').classList.add('hidden');
+  $('#checkout-wpp').onclick = checkoutWhatsApp;
 
-  catToggle.onclick = () => {
-    catList.classList.toggle('open');
-    catToggle.textContent = catList.classList.contains('open')
-      ? "Categorias "
-      : "Categorias ";
-  };
-
-  $('#open-cart').onclick = ()=>{ $('#cart-modal').classList.remove('hidden') }
-  $('#close-cart').onclick = ()=>{ $('#cart-modal').classList.add('hidden') }
-  $('#checkout-wpp').onclick = checkoutWhatsApp
   $('#search').addEventListener('input', ()=>{
-    const catBtn = document.querySelector('#categories button.active');
-    const cat = catBtn && catBtn.textContent !== 'Todos' ? catBtn.textContent : null;
-    renderProducts(cat, $('#search').value.trim())
-  })
+    renderProducts($('#search').value.trim());
+  });
 });
